@@ -32,10 +32,15 @@ application up and running.
 	```
 	$ bundle exec rails new . --webpack --dev --force
 	```
-0. run rails
+0. run rails and webpack-watcher
 
 	```
 	$ rails s
+	```
+	in another console
+
+	```
+	$ ./bin/webpack-watcher
 	```
 	you can see at http://localhost:3000 the rails welcome page
 
