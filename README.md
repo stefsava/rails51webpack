@@ -1,12 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
+This README would document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-* suggest from:
+* Suggest from:
 	* http://www.christopherbloom.com/2015/04/26/setting-up-a-rails-5-app-from-edge/
 	* https://github.com/rails/webpacker
 
@@ -49,10 +46,15 @@ Things you may want to cover:
 	Rails version: 5.1.0.alpha
 	Ruby version: 2.3.1 (x86_64-darwin16)
 	```
-0. adopt git
+0. initialize git
 
 	```
 	$ git init
 	$ git add .
 	$ git commit -m "initial commit"
+	```
+0. add react with webpacker
+
+	```
+	$ rails webpacker:install:react
 	```
