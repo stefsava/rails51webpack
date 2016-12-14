@@ -4,62 +4,71 @@ This README would document whatever steps are necessary to get the
 application up and running.
 
 * Suggest from:
-	* http://www.christopherbloom.com/2015/04/26/setting-up-a-rails-5-app-from-edge/
-	* https://github.com/rails/webpacker
+  * http://www.christopherbloom.com/2015/04/26/setting-up-a-rails-5-app-from-edge/
+  * https://github.com/rails/webpacker
 
 0. create folder
 
-	```
-	$ mkdir test-rails-51
-	$ cd test-rails-51
-	```
+  ```sh
+  $ mkdir test-rails-51
+  $ cd test-rails-51
+  ```
 0. create Gemfile
 
-	```ruby
-	source "https://rubygems.org"
-	ruby '2.3.1'
-	gem 'rails', :git => 'https://github.com/rails/rails.git'
-	gem 'rack', :git => 'https://github.com/rack/rack.git'
-	gem 'arel', :git => 'https://github.com/rails/arel.git'
-	```
+  ```ruby
+  source "https://rubygems.org"
+  ruby '2.3.1'
+  gem 'rails', :git => 'https://github.com/rails/rails.git'
+  gem 'rack', :git => 'https://github.com/rack/rack.git'
+  gem 'arel', :git => 'https://github.com/rails/arel.git'
+  ```
 0. run bundle
 
-	```
-	$ bundle
-	```
+  ```sh
+  $ bundle
+  ```
 0. create rails application
 
-	```
-	$ bundle exec rails new . --webpack --dev --force
-	```
+  ```sh
+  $ bundle exec rails new . --webpack --dev --force
+  ```
 0. run rails and webpack-watcher
 
-	```
-	$ rails s
-	```
-	in another console
+  ```sh
+  $ rails s
+  ```
+  in another console
 
-	```
-	$ ./bin/webpack-watcher
-	```
-	you can see at http://localhost:3000 the rails welcome page
+  ```sh
+  $ ./bin/webpack-watcher
+  ```
+  you can see at http://localhost:3000 the rails welcome page
 
-	```
-	Ruby on Rails (image)
-	Yay! You’re on Rails!
-	Welcome (image)
-	Rails version: 5.1.0.alpha
-	Ruby version: 2.3.1 (x86_64-darwin16)
-	```
+  ```sh
+  Ruby on Rails (image)
+  Yay! You’re on Rails!
+  Welcome (image)
+  Rails version: 5.1.0.alpha
+  Ruby version: 2.3.1 (x86_64-darwin16)
+  ```
+
 0. initialize git
 
-	```
-	$ git init
-	$ git add .
-	$ git commit -m "initial commit"
-	```
+  ```sh
+  $ git init
+  $ git add .
+  $ git commit -m "initial commit"
+  ```
 0. add react with webpacker
 
-	```
-	$ rails webpacker:install:react
-	```
+  ```sh
+  $ rails webpacker:install:react
+  ```
+
+### Initializing from the repo
+
+When you download from git, you need this extra step:
+
+  ```sh
+  $ ./bin/yarn
+  ```
