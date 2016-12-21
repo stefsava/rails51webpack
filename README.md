@@ -65,10 +65,17 @@ application up and running.
   $ rails webpacker:install:react
   ```
 
+0. add redux and react-redux
+
+  ```sh
+  $ bin/yarn add redux
+  $ bin/yarn add react-redux
+  ```
+
 ### Initializing from the repo
 
 When you download from git, you need this extra step:
 
   ```sh
-  $ ./bin/yarn
+  $ bin/yarn
   ```
