@@ -2,6 +2,7 @@
   "name": "test-rails-51",
   "private": true,
   "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-redux": "^5.0.1",
