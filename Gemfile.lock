@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: e3e663f1dc40a5cfae9ec60e32f5372cd7f9885b
+  revision: 7336d0a269dbee21f4d38c2f48e47302e81095aa
   specs:
     actioncable (5.1.0.alpha)
       actionpack (= 5.1.0.alpha)
@@ -80,7 +80,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/webpacker.git
-  revision: 011100b233f32ebe6eb4be86a901f7267035bb18
+  revision: a504109501c45e127e00f52ea6773bde7f480f49
   specs:
     webpacker (0.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -99,8 +99,8 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.11.1)
-    concurrent-ruby (1.0.2)
+    coffee-script-source (1.12.2)
+    concurrent-ruby (1.0.3)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -143,7 +143,7 @@ GEM
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     ruby_dep (1.5.0)
-    sass (3.4.22)
+    sass (3.4.23)
     sprockets (4.0.0.beta4)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -184,4 +184,4 @@ DEPENDENCIES
   webpacker!
 
 BUNDLED WITH
-   1.13.3
+   1.13.6
