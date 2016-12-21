@@ -1,5 +1,5 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 class Hello extends React.Component {
   render() {
@@ -7,6 +7,4 @@ class Hello extends React.Component {
   }
 }
 
-document.addEventListener("DOMContentLoaded", e => {
-  ReactDOM.render(<Hello name="React" />, document.body.appendChild(document.createElement('div')))
-})
+export { Hello as default}
