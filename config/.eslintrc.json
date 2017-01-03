@@ -69,7 +69,7 @@
     ],
     "object-curly-spacing": [
       "error",
-      "never"
+      "always"
     ],
     "array-bracket-spacing": [
       "error",
