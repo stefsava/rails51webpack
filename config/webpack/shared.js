@@ -12,7 +12,7 @@ module.exports = {
       map[basename] = entry
       return map
     }, {
-      'react_bundle': ['react', 'react-dom', 'redux', 'react-redux']
+      'react_bundle': ['react', 'react-dom', 'redux', 'react-redux', 'react-router']
     }
   ),
 
