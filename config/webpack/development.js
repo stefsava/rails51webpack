@@ -7,8 +7,19 @@ var merge   = require('webpack-merge')
 var config = require('./shared.js')
 
 module.exports = merge(config, {
-  debug: true,
-  displayErrorDetails: true,
-  outputPathinfo: true,
   devtool: 'sourcemap',
-});
+
+  stats: {
+    errorDetails: true
+  },
+
+  output: {
+    pathinfo: true
+  },
+
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      debug: true
+    })
+  ]
+})
