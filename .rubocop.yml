@@ -1,0 +1,24 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'bin/*'
+    - 'db/**/*'
+    - 'vendor/bundle/**/*'
+    - 'vendor/node_modules/**/*'
+
+Metrics/LineLength:
+  IgnoredPatterns: ['^\s*#']
+
+Metrics/MethodLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/**/*'
+
+Rails:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
