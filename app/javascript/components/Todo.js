@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react'
+import React, {PropTypes} from "react"
 
-const Todo = ({ onClick, completed, text }) => (
+const Todo = ({onClick, completed, text}) => (
   <li
     onClick={onClick}
     style={{
-      textDecoration: completed ? 'line-through' : 'none'
+      textDecoration: completed ? "line-through" : "none"
     }}
   >
     {text}
