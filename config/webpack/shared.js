@@ -24,6 +24,15 @@ module.exports = {
       {
         test: /\.jsx?(.erb)?$/,
         exclude: /node_modules/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        options: {
+          configFile: '../config/.eslintrc.json'
+        },
+      },
+      {
+        test: /\.jsx?(.erb)?$/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
           presets: [

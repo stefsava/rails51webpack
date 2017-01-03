@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+RAILS_ENV  = ENV['RAILS_ENV'] || 'development'
+ESLINT_ENV = ENV['ESLINT_ENV'] || RAILS_ENV
+
+APP_PATH    = File.expand_path('../', __dir__)
+VENDOR_PATH = File.expand_path('../vendor', __dir__)
+PACKS_PATH  = File.expand_path('../app/javascript', __dir__)
+
+SET_NODE_PATH = "NODE_PATH=#{VENDOR_PATH}/node_modules"
+ESLINT_BIN    = "./node_modules/eslint/bin/eslint.js"
+ESLINT_CONFIG = "#{APP_PATH}/config/.eslintrc.json"
+
+Dir.chdir(VENDOR_PATH) do
+  exec "#{SET_NODE_PATH} #{ESLINT_BIN} --config #{ESLINT_CONFIG} #{PACKS_PATH} #{ARGV.join(" ")}"
+end
