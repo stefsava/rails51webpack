@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -5,8 +6,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', github: 'rails/rails'
 gem 'arel', github: 'rails/arel'
+
+gem 'rails', github: 'rails/rails'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -46,9 +48,9 @@ end
 group :development do
   # Access an IRB console on exception pages
   # or by using <%= console %> anywhere in the code.
-  gem 'web-console', github: 'rails/web-console'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop', require: false
+  gem 'web-console', github: 'rails/web-console'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
