@@ -1,7 +1,8 @@
 // Note: You must restart bin/webpack-watcher for changes to take effect
 
-var path = require('path')
-var glob = require('glob')
+var path    = require('path')
+var webpack = require('webpack')
+var glob    = require('glob')
 var extname = require('path-complete-extname')
 
 module.exports = {
@@ -10,7 +11,9 @@ module.exports = {
       var basename = path.basename(entry, extname(entry))
       map[basename] = entry
       return map
-    }, {}
+    }, {
+      'react_bundle': ['react', 'react-dom', 'redux', 'react-redux']
+    }
   ),
 
   output: { filename: '[name].js', path: path.join('..', 'public', 'packs') },
@@ -41,7 +44,9 @@ module.exports = {
     ]
   },
 
-  plugins: [],
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('react_bundle')
+  ],
 
   resolve: {
     extensions: [ '.js', '.coffee' ],
