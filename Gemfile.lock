@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 33e60514aed85b3076f2636d5f1ccfb513aace1c
+  revision: 929ded40fc1bdeb42353868b7ada9e73615ad4b4
   specs:
     actioncable (5.1.0.alpha)
       actionpack (= 5.1.0.alpha)
@@ -86,7 +86,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/webpacker.git
-  revision: 964338a0eae58857ca0de77ef9833b1437517856
+  revision: ce14b6961fb5d19e0455e2b912a4bb9efce68f87
   specs:
     webpacker (0.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -97,6 +97,11 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.3.0)
+    autoprefixer-rails (6.6.1)
+      execjs
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.6)
     coffee-rails (4.2.1)
@@ -188,6 +193,8 @@ PLATFORMS
 
 DEPENDENCIES
   arel!
+  autoprefixer-rails
+  bootstrap-sass (~> 3.3)
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
