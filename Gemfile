@@ -53,6 +53,7 @@ group :development do
   # or by using <%= console %> anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop', require: false
+  gem 'scss_lint', require: false
   gem 'web-console', github: 'rails/web-console'
 end
 
