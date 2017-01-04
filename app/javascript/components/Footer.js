@@ -1,5 +1,6 @@
 import React from "react"
 import FilterLink from "../containers/FilterLink"
+import { Link } from "react-router"
 
 const Footer = () => (
   <p>
@@ -16,6 +17,9 @@ const Footer = () => (
     <FilterLink filter="SHOW_COMPLETED">
       Completed
     </FilterLink>
+    <br />
+    <Link to="/">Uno</Link>
+    <Link to="/pippo">Due</Link>
   </p>
 )
 

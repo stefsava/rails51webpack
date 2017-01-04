@@ -19,15 +19,29 @@ import React from "react"
 import { render } from "react-dom"
 import { createStore } from "redux"
 import { Provider } from "react-redux"
-// import { Router, Route, Link } from "react-router"
+// import { Router, Route, IndexRoute, browserHistory } from "react-router"
+// import { syncHistoryWithStore, routerReducer } from "react-router-redux"
+import { Router, Route, browserHistory } from "react-router"
+import { syncHistoryWithStore } from "react-router-redux"
+
 import App from "../components/App"
+import App2 from "../components/App2"
 import reducer from "../reducers"
 
-const store = createStore(reducer)
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+
+const history = syncHistoryWithStore(browserHistory, store)
+
 document.addEventListener("DOMContentLoaded", () => {
   render(
     <Provider store={store}>
-      <App />
+      <Router history={history}>
+        <Route path="/" component={App} />
+        <Route path="/pippo" component={App2} />
+      </Router>
     </Provider>,
     document.getElementById("root")
   )
