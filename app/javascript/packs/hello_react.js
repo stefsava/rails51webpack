@@ -25,7 +25,12 @@ import { Router, Route, browserHistory } from "react-router"
 import { syncHistoryWithStore } from "react-router-redux"
 
 import App from "../components/App"
-import App2 from "../components/App2"
+// import App2 from "../components/App2"
+
+import MainLayout from "../components/MainLayout"
+import SearchLayout from "../components/SearchLayout"
+import UserList from "../components/UserList"
+
 import reducer from "../reducers"
 
 const store = createStore(
@@ -39,8 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
   render(
     <Provider store={store}>
       <Router history={history}>
-        <Route path="/" component={App} />
-        <Route path="/pippo" component={App2} />
+        <Route component={MainLayout}>
+          <Route component={SearchLayout}>
+            <Route path="/" component={App} />
+            <Route path="/users" component={UserList} />
+        </Route>
+        </Route>
       </Router>
     </Provider>,
     document.getElementById("root")
