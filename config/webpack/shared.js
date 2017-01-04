@@ -21,6 +21,7 @@ module.exports = {
   module: {
     rules: [
       { test: /\.coffee(.erb)?$/, loader: "coffee-loader" },
+      /*
       {
         test: /\.jsx?(.erb)?$/,
         exclude: /node_modules/,
@@ -30,6 +31,7 @@ module.exports = {
           configFile: '../config/.eslintrc.json'
         },
       },
+      */
       {
         test: /\.jsx?(.erb)?$/,
         exclude: /node_modules/,
