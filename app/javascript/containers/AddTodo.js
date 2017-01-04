@@ -15,12 +15,17 @@ let AddTodo = ({ dispatch }) => {
         dispatch(addTodo(input.value))
         input.value = ""
       }}>
-        <input ref={node => {
-          input = node
-        }} />
-        <button type="submit">
-          Add Todo
-        </button>
+        <div className="form-group">
+          <div className="input-group">
+            <input type="text" className="form-control" placeholder="Todo..."
+              ref={node => {
+                input = node
+              }} />
+            <span className="input-group-btn">
+              <button className="btn btn-primary" type="submit">Add</button>
+            </span>
+          </div>
+        </div>
       </form>
     </div>
   )

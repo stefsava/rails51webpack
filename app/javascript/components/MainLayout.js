@@ -4,7 +4,7 @@ import { Button, ButtonToolbar, ButtonGroup, Glyphicon } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 
 const MainLayout = ({ children }) => (
-  <div className="app">
+  <div className="app container">
     <header className="primary-header">
       <ButtonToolbar>
         <LinkContainer to={{ pathname: "/", query: { bar: "baz" } }}>

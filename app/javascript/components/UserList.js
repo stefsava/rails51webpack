@@ -2,7 +2,9 @@ import React from "react"
 
 const UserList = () => (
   <div>
-    <h1>Users List</h1>
+    <div className="page-header">
+      <h1>Users List</h1>
+    </div>
     <ul className="user-list">
       <li>Dan</li>
       <li>Ryan</li>
