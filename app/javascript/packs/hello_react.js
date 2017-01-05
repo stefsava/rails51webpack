@@ -1,34 +1,20 @@
-// Run this example by adding <%= javascript_pack_tag 'hello_react' %> to the
-// head of your layout file,
-// like app/views/layouts/application.html.erb. All it does is render
-// <div>Hello React</div> at the bottom
-// of the page.
-
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-// import Hello from 'hello'
-//
-// document.addEventListener("DOMContentLoaded", e => {
-//   ReactDOM.render(
-//     <Hello name="React" />,
-//     document.body.appendChild(document.createElement('div'))
-//   )
-// })
-
 import React from "react"
 import { render } from "react-dom"
 import { createStore } from "redux"
 import { Provider } from "react-redux"
-// import { Router, Route, IndexRoute, browserHistory } from "react-router"
-// import { syncHistoryWithStore, routerReducer } from "react-router-redux"
 import { Router, Route, browserHistory } from "react-router"
 import { syncHistoryWithStore } from "react-router-redux"
 
-import App from "../components/App"
-// import App2 from "../components/App2"
+import Homepage from "../components/Homepage"
+
+import Lock from "../components/Lock"
+import Login from "../components/Login"
+import Signup from "../components/Signup"
 
 import MainLayout from "../components/MainLayout"
 import SearchLayout from "../components/SearchLayout"
+
+import TodoApp from "../components/TodoApp"
 import UserList from "../components/UserList"
 
 import reducer from "../reducers"
@@ -44,11 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
   render(
     <Provider store={store}>
       <Router history={history}>
+        <Route>
+          <Route path="/" component={Homepage} />
+        </Route>
+        <Route>
+          <Route path="lock" component={ Lock } />
+          <Route path="login" component={ Login } />
+          <Route path="signup" component={ Signup } />
+        </Route>
         <Route component={MainLayout}>
           <Route component={SearchLayout}>
-            <Route path="/" component={App} />
+            <Route path="/todos" component={TodoApp} />
             <Route path="/users" component={UserList} />
-        </Route>
+          </Route>
         </Route>
       </Router>
     </Provider>,
