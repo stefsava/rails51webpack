@@ -14,6 +14,7 @@ import Signup from "../components/Signup"
 import MainLayout from "../components/MainLayout"
 import SearchLayout from "../components/SearchLayout"
 
+import Dashboard from "../components/Dashboard"
 import TodoApp from "../components/TodoApp"
 import UserList from "../components/UserList"
 
@@ -29,23 +30,24 @@ const history = syncHistoryWithStore(browserHistory, store)
 document.addEventListener("DOMContentLoaded", () => {
   render(
     <Provider store={store}>
-      <Router history={history}>
-        <Route>
-          <Route path="/" component={Homepage} />
-        </Route>
-        <Route>
-          <Route path="lock" component={ Lock } />
-          <Route path="login" component={ Login } />
-          <Route path="signup" component={ Signup } />
-        </Route>
-        <Route component={MainLayout}>
-          <Route component={SearchLayout}>
-            <Route path="/todos" component={TodoApp} />
-            <Route path="/users" component={UserList} />
-          </Route>
-        </Route>
-      </Router>
+      <Router history={history} routes={routes} />
     </Provider>,
     document.getElementById("root")
   )
 })
+
+const routes = (
+  <Route>
+    <Route path="/" component={ Homepage } />
+    <Route path="lock" component={ Lock } />
+    <Route path="login" component={ Login } />
+    <Route path="signup" component={ Signup } />
+    <Route component={ MainLayout }>
+      <Route component={ SearchLayout }>
+        <Route path="/dashboard" component={ Dashboard } />
+        <Route path="/todos" component={ TodoApp } />
+        <Route path="/users" component={ UserList } />
+      </Route>
+    </Route>
+  </Route>
+);

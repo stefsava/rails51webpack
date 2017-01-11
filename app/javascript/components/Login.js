@@ -1,8 +1,10 @@
 import React from "react"
+import { Link } from "react-router"
 
 const Login = () => (
   <div>
-    Login
+    <h1>Login</h1>
+    <Link to="/dashboard">Dashboard</Link>
   </div>
 )
 
