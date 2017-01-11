@@ -7,8 +7,10 @@ import configureStore from '../store/configureStore.js';
 
 const store = configureStore();
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={browserHistory} routes={routes} />
-  </Provider>
-  , document.getElementById('root'));
+document.addEventListener("DOMContentLoaded", () => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <Router history={browserHistory} routes={routes} />
+    </Provider>
+    , document.getElementById('root'));
+})
