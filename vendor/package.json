@@ -2,6 +2,7 @@
   "name": "test-rails-51",
   "private": true,
   "dependencies": {
+    "@sketchpixy/rubix": "^2.9.16",
     "react": "^15.4.1",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1",
