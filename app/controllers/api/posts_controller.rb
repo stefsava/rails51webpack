@@ -4,7 +4,7 @@ class Api::PostsController < ApplicationController
   # GET /api/posts
   # GET /api/posts.json
   def index
-    @api_posts = Api::Post.all
+    @api_posts = Post.all
   end
 
   # GET /api/posts/1
@@ -15,7 +15,7 @@ class Api::PostsController < ApplicationController
   # POST /api/posts
   # POST /api/posts.json
   def create
-    @api_post = Api::Post.new(api_post_params)
+    @api_post = Post.new(api_post_params)
 
     if @api_post.save
       render :show, status: :created, location: @api_post
@@ -43,7 +43,7 @@ class Api::PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_api_post
-      @api_post = Api::Post.find(params[:id])
+      @api_post = Post.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
