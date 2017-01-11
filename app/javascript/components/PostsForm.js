@@ -132,6 +132,6 @@ class PostsForm extends Component {
 
 export default reduxForm({
   form: 'PostsForm', // a unique identifier for this form
-  validate, // <--- validation function given to redux-form
-  asyncValidate
+  validate // , // <--- validation function given to redux-form
+  // asyncValidate
 })(PostsForm)
