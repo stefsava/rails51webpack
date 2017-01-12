@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Api
   class ResourcesController < ActionController::API
     before_action :authenticate_request

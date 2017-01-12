@@ -1,4 +1,4 @@
-class AuthenticationController < ApplicationController
+class Api::V1::Core::AuthenticationController < ApplicationController
 
   def authenticate
     render_command AuthenticateUser.call(params[:email], params[:password])
