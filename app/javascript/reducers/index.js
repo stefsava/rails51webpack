@@ -5,6 +5,7 @@ import ValidateUserFieldsReducer from './reducer_validateUserFields';
 import ResendEmailReducer from './reducer_resendEmail';
 import UpdateEmailReducer from './reducer_updateEmail';
 import { reducer as formReducer } from 'redux-form';
+import { routerReducer } from "react-router-redux"
 
 const rootReducer = combineReducers({
   user: UserReducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   posts: PostsReducer, //<-- Posts
   form: formReducer, // <-- redux-form
   resendEmail: ResendEmailReducer,
-  updateEmail: UpdateEmailReducer
+  updateEmail: UpdateEmailReducer,
+  routing: routerReducer
 });
 
 export default rootReducer;

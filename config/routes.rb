@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     resources :posts
   end
-  # get '*path', to: 'application#welcome'
+  get '*path', to: 'application#welcome'
 end
