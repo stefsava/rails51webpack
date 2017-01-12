@@ -169,6 +169,7 @@ GEM
     scss_lint (0.51.0)
       rake (>= 0.9, < 13)
       sass (~> 3.4.20)
+    simple_command (0.0.9)
     sprockets (4.0.0.beta4)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -207,6 +208,7 @@ DEPENDENCIES
   rubocop
   sass-rails!
   scss_lint
+  simple_command
   sqlite3
   turbolinks (~> 5)
   tzinfo-data
