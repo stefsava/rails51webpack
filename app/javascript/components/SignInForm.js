@@ -8,8 +8,8 @@ import { signInUser, signInUserSuccess, signInUserFailure, resetUserFields } fro
 function validate(values) {
   var errors = {};
   var hasErrors = false;
-  if (!values.username || values.username.trim() === '') {
-    errors.username = 'Enter username';
+  if (!values.email || values.email.trim() === '') {
+    errors.email = 'Enter email';
     hasErrors = true;
   }
   if (!values.password || values.password.trim() === '') {
@@ -33,7 +33,7 @@ const validateAndSignInUser = (values, dispatch) => {
       //Store JWT Token to browser session storage 
       //If you use localStorage instead of sessionStorage, then this w/ persisted across tabs and new windows.
       //sessionStorage = persisted only in current tab
-      sessionStorage.setItem('jwtToken', result.payload.data.token);
+      sessionStorage.setItem('jwtToken', result.payload.data.auth_token);
       //let other components know that everything is fine by updating the redux` state
       dispatch(signInUserSuccess(result.payload.data)); //ps: this is same as dispatching RESET_USER_FIELDS
     });
@@ -71,10 +71,10 @@ class SignInForm extends Component {
       <div className="container">
         <form onSubmit={ handleSubmit(validateAndSignInUser) }>
           <Field
-                 name="username"
+                 name="email"
                  type="text"
                  component={ renderField }
-                 label="@username*" />
+                 label="@email*" />
           <Field
                  name="password"
                  type="password"

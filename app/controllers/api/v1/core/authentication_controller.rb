@@ -6,7 +6,8 @@ class Api::V1::Core::AuthenticationController < ApplicationController
 
   def render_command(command)
     if command.success?
-      render json: { auth_token: command.result }
+      user = command.send(:user).slice(:name, :email)
+      render json: { user: user, auth_token: command.result }
     else
       render json: { error: command.errors }, status: :unauthorized
     end
