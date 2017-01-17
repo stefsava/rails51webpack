@@ -10,8 +10,10 @@ gem 'arel', github: 'rails/arel'
 
 gem 'rails', github: 'rails/rails'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
+gem 'rgeo'
+gem 'rgeo-activerecord', github: 'amitree/rgeo-activerecord'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
