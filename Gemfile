@@ -10,9 +10,9 @@ gem 'arel', github: 'rails/arel'
 
 gem 'rails', github: 'rails/rails'
 
+gem 'activerecord-postgis-adapter', '4.0.2', github: 'stefsava/activerecord-postgis-adapter'
 gem 'pg'
-gem 'rgeo'
-gem 'rgeo-activerecord', github: 'amitree/rgeo-activerecord'
+gem 'rgeo-activerecord', '5.0.1', github: 'tagliala/rgeo-activerecord'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'

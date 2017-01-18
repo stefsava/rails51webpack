@@ -1,20 +1,12 @@
 GIT
-  remote: https://github.com/amitree/rgeo-activerecord.git
-  revision: b7d0db9a57bd7ba75d2c8ca3957446e5f1a25217
-  specs:
-    rgeo-activerecord (4.0.5)
-      activerecord (>= 4.2.0)
-      rgeo (~> 0.3)
-
-GIT
   remote: https://github.com/rails/arel.git
-  revision: ab109d3bf1c773da5e78ddc93bb6b55aebbb1c2a
+  revision: f5f81be73df89011fe9bc89915b99d81e0c9a67f
   specs:
     arel (8.0.0)
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 929ded40fc1bdeb42353868b7ada9e73615ad4b4
+  revision: d1631f146b058f58a01115449d4f9cbc34578000
   specs:
     actioncable (5.1.0.alpha)
       actionpack (= 5.1.0.alpha)
@@ -94,20 +86,37 @@ GIT
 
 GIT
   remote: https://github.com/rails/webpacker.git
-  revision: ce14b6961fb5d19e0455e2b912a4bb9efce68f87
+  revision: 35090738f2a77cdd33dd03091bf97b402231b361
   specs:
-    webpacker (0.1)
+    webpacker (0.2)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
       railties (~> 5)
 
+GIT
+  remote: https://github.com/stefsava/activerecord-postgis-adapter.git
+  revision: 3dc53e6bd94f3a1dc604d2e6eebb4db9276ffee4
+  specs:
+    activerecord-postgis-adapter (4.0.2)
+      activerecord (~> 5.0)
+      rgeo-activerecord (~> 5.0)
+
+GIT
+  remote: https://github.com/tagliala/rgeo-activerecord.git
+  revision: eaf1fa94cf7846a0736706c0db35f4aec41654a5
+  specs:
+    rgeo-activerecord (5.0.1)
+      activerecord (~> 5.0)
+      rgeo (~> 0.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    active_model_serializers (0.10.3)
+    active_model_serializers (0.10.4)
       actionpack (>= 4.1, < 6)
       activemodel (>= 4.1, < 6)
-      jsonapi (= 0.1.1.beta2)
+      case_transform (>= 0.2)
+      jsonapi (= 0.1.1.beta6)
     andand (1.3.3)
     ast (2.3.0)
     autoprefixer-rails (6.6.1)
@@ -116,8 +125,10 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    builder (3.2.2)
+    builder (3.2.3)
     byebug (9.0.6)
+    case_transform (0.2)
+      activesupport
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -129,16 +140,18 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
-    ffi (1.9.14)
+    ffi (1.9.17)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    json (1.8.5)
-    jsonapi (0.1.1.beta2)
-      json (~> 1.8)
+    jsonapi (0.1.1.beta6)
+      jsonapi-parser (= 0.1.1.beta3)
+      jsonapi-renderer (= 0.1.1.beta1)
+    jsonapi-parser (0.1.1.beta3)
+    jsonapi-renderer (0.1.1.beta1)
     jwt (1.5.6)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -156,7 +169,7 @@ GEM
     minitest (5.10.1)
     multi_json (1.12.1)
     nio4r (2.0.0)
-    nokogiri (1.7.0)
+    nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     parser (2.3.3.1)
       ast (~> 2.2)
@@ -177,8 +190,8 @@ GEM
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     rgeo (0.5.3)
-    rubocop (0.46.0)
-      parser (>= 2.3.1.1, < 3.0)
+    rubocop (0.47.1)
+      parser (>= 2.3.3.1, < 3.0)
       powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.7)
@@ -186,7 +199,7 @@ GEM
     ruby-progressbar (1.8.1)
     ruby_dep (1.5.0)
     sass (3.4.23)
-    scss_lint (0.51.0)
+    scss_lint (0.52.0)
       rake (>= 0.9, < 13)
       sass (~> 3.4.20)
     simple_command (0.0.9)
@@ -206,7 +219,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (1.1.2)
+    unicode-display_width (1.1.3)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -216,6 +229,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.0)
+  activerecord-postgis-adapter (= 4.0.2)!
   andand
   arel!
   autoprefixer-rails
@@ -229,8 +243,7 @@ DEPENDENCIES
   pg
   puma (~> 3.0)
   rails!
-  rgeo
-  rgeo-activerecord!
+  rgeo-activerecord (= 5.0.1)!
   rubocop
   sass-rails!
   scss_lint
